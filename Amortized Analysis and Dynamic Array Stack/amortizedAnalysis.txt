@@ -1,0 +1,69 @@
+1)
+push 8 elements (8 units)/(8 ops)
+push 1 element/resize to 16 (9 units)/(1 op)
+push 7 elements(7 units)/(7 ops)
+push 1 element/resize to 32 (17 units / 1 op)
+push 7 elements(7 units)/(7 ops)
+push 8 elements(8 units)/(8 ops)
+
+Total cost of units = 56
+
+total operations = 32
+
+For the first questions the operation gets closer toward 0(1) complexity, as n continues to grow.
+
+2)
+push 8 elements (8 units)/(8 ops)
+resize to 10 (8 units)/(1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 12 (10 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 14 (12 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 16 (14 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 18 (16 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 20 (18 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 22 (20 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 24 (22 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 26 (24 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 28 (26 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 30 (28 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+resize to 32 (30 units / 1 op)
+push 2 elements(2 units)/(2 ops)
+
+
+total cost of units = 258 
+
+amount of total operations = 44
+
+This operations is heading toward 0(n^2) as n continues to grow.
+
+3)
+
+This data structure would not perform great. There would be a great deal of un needed operations taking place because of the way
+that the structure is set up. An example is below.
+
+Array cap is 8, and there are 8 elements in the array.
+
+call push() function again to add data
+
+Array cap now increases to 16 because it doubles
+Array size is now 9.
+
+call the pop() function to remove an element
+
+The array cap now has to be changed back to 8.
+the array size is now 8 again.
+
+Obviously this example provided would not be the case with every operation performed, but it would definitely be the most costly outcome.
+One way to help with the costliness of the program is to change the shrinking percentage. Half of the elements in the array is 
+still a descent amount and not really close to needing to resize. You could change it to 1/4 or 1/8 so it really only shrinks when
+it ABSOLUTELY has to (at least in theory). 
